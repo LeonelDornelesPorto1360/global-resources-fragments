@@ -1,0 +1,339 @@
+#%RAML 1.0 Library
+usage: This library provides some common request message structures for APIs
+types:
+  PostErrorHandler:
+    description: Represents a standard message body to be send with error responses body
+    type: object
+    properties:
+      suppressedErrors:
+        type: array
+        items: {}
+      errorType:
+        type: object
+        properties:
+          identifier:
+            type: string
+            example: NOT_FOUND
+            required: false
+          parentErrorType:
+            type: object
+            properties:
+              identifier:
+                type: string
+                example: ANY
+                required: false
+              parentErrorType:
+                type: object
+                properties:
+                  identifier:
+                    type: string
+                    example: ANY
+                    required: false
+                  parentErrorType:
+                    type: 'null'
+                    example: null
+                    required: false
+                  namespace:
+                    type: string
+                    example: MULE
+                    required: false
+              namespace:
+                type: string
+                example: APIKIT
+                required: false
+          namespace:
+            type: string
+            example: APIKIT
+            required: false
+      childErrors:
+        type: array
+        items: {}
+      errorMessage:
+        type: 'null'
+        example: null
+        required: false
+      cause:
+        type: object
+        properties:
+          verboseMessage:
+            type: string
+            example: "\r\n********************************************************************************\r\nMessage               : /validaleituraf\r\nElement               : exp-portalweb-dev-main/processors/1 @ exp-portalweb-dev-07-28-2023-brunolim:exp-portalweb-dev.xml:31\r\nElement DSL           : <apikit:router config-ref=\"exp-portalweb-dev-config\"></apikit:router>\r\nError type            : APIKIT:NOT_FOUND\r\nFlowStack             : at exp-portalweb-dev-main(exp-portalweb-dev-main/processors/1 @ exp-portalweb-dev-07-28-2023-brunolim:exp-portalweb-dev.xml:31)\r\n--------------------------------------------------------------------------------\r\nRoot Exception stack trace:\r\norg.mule.module.apikit.exception.NotFoundException: /validaleituraf\r\n\r\n********************************************************************************\r\n"
+            required: false
+          localizedMessage:
+            type: string
+            example: /validaleituraf
+            required: false
+          summaryMessage:
+            type: string
+            example: "\r\n********************************************************************************\r\nMessage               : /validaleituraf\r\nElement               : exp-portalweb-dev-main/processors/1 @ exp-portalweb-dev-07-28-2023-brunolim:exp-portalweb-dev.xml:31\r\nElement DSL           : <apikit:router config-ref=\"exp-portalweb-dev-config\"></apikit:router>\r\nError type            : APIKIT:NOT_FOUND\r\nFlowStack             : at exp-portalweb-dev-main(exp-portalweb-dev-main/processors/1 @ exp-portalweb-dev-07-28-2023-brunolim:exp-portalweb-dev.xml:31)\r\n\r\n  (set debug level logging or '-Dmule.verbose.exceptions=true' for everything)\r\n********************************************************************************\r\n"
+            required: false
+          cause:
+            type: 'null'
+            example: null
+            required: false
+          message:
+            type: string
+            example: /validaleituraf
+            required: false
+          i18nMessage:
+            type: object
+            properties:
+              code:
+                type: integer
+                example: -1
+                required: false
+              nextMessage:
+                type: 'null'
+                example: null
+                required: false
+              message:
+                type: string
+                example: /validaleituraf
+                required: false
+              args:
+                type: array
+                items: {}
+          detailedMessage:
+            type: string
+            example: "\r\n********************************************************************************\r\nMessage               : /validaleituraf\r\nElement               : exp-portalweb-dev-main/processors/1 @ exp-portalweb-dev-07-28-2023-brunolim:exp-portalweb-dev.xml:31\r\nElement DSL           : <apikit:router config-ref=\"exp-portalweb-dev-config\"></apikit:router>\r\nError type            : APIKIT:NOT_FOUND\r\nFlowStack             : at exp-portalweb-dev-main(exp-portalweb-dev-main/processors/1 @ exp-portalweb-dev-07-28-2023-brunolim:exp-portalweb-dev.xml:31)\r\n\r\n  (set debug level logging or '-Dmule.verbose.exceptions=true' for everything)\r\n********************************************************************************\r\n"
+            required: false
+          stringRepresentation:
+            type: string
+            example: APIKIT:NOT_FOUND
+            required: false
+          additionalInfo:
+            type: object
+            properties: {}
+          messageCode:
+            type: integer
+            example: -1
+            required: false
+          stackTrace:
+            type: array
+            items: {}
+          suppressed:
+            type: array
+            items: {}
+          exceptionInfo:
+            type: object
+            properties:
+              dslSource:
+                type: string
+                example: >-
+                  <apikit:router
+                  config-ref="exp-portalweb-dev-config"></apikit:router>
+                required: false
+              alreadyLogged:
+                type: boolean
+                example: true
+                required: false
+              errorType:
+                type: object
+                properties:
+                  identifier:
+                    type: string
+                    example: NOT_FOUND
+                    required: false
+                  parentErrorType:
+                    type: object
+                    properties:
+                      identifier:
+                        type: string
+                        example: ANY
+                        required: false
+                      parentErrorType:
+                        type: object
+                        properties:
+                          identifier:
+                            type: string
+                            example: ANY
+                            required: false
+                          parentErrorType:
+                            type: 'null'
+                            example: null
+                            required: false
+                          namespace:
+                            type: string
+                            example: MULE
+                            required: false
+                      namespace:
+                        type: string
+                        example: APIKIT
+                        required: false
+                  namespace:
+                    type: string
+                    example: APIKIT
+                    required: false
+              flowStack:
+                type: object
+                properties:
+                  elements:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        creationTime:
+                          type: integer
+                          example: 1690863375041
+                          required: false
+                        flowName:
+                          type: string
+                          example: exp-portalweb-dev-main
+                          required: false
+                        elapsedTimeLong:
+                          type: integer
+                          example: 26230
+                          required: false
+                        creationTimeLong:
+                          type: integer
+                          example: 1690863375041
+                          required: false
+                        processorPath:
+                          type: string
+                          example: >-
+                            exp-portalweb-dev-main/processors/1 @
+                            exp-portalweb-dev-07-28-2023-brunolim:exp-portalweb-dev.xml:31
+                          required: false
+                        chainIdentifier:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                              example: flow
+                              required: false
+                            namespace:
+                              type: string
+                              example: mule
+                              required: false
+                            namespaceUri:
+                              type: string
+                              example: http://www.mulesoft.org/schema/mule/core
+                              required: false
+                        elapsedTime:
+                          type: integer
+                          example: 26230
+                          required: false
+              location:
+                type: string
+                example: >-
+                  exp-portalweb-dev-main/processors/1 @
+                  exp-portalweb-dev-07-28-2023-brunolim:exp-portalweb-dev.xml:31
+                required: false
+              suppressedCauses:
+                type: array
+                items: {}
+          info:
+            type: object
+            properties:
+              Error type:
+                type: object
+                properties:
+                  identifier:
+                    type: string
+                    example: NOT_FOUND
+                    required: false
+                  parentErrorType:
+                    type: object
+                    properties:
+                      identifier:
+                        type: string
+                        example: ANY
+                        required: false
+                      parentErrorType:
+                        type: object
+                        properties:
+                          identifier:
+                            type: string
+                            example: ANY
+                            required: false
+                          parentErrorType:
+                            type: 'null'
+                            example: null
+                            required: false
+                          namespace:
+                            type: string
+                            example: MULE
+                            required: false
+                      namespace:
+                        type: string
+                        example: APIKIT
+                        required: false
+                  namespace:
+                    type: string
+                    example: APIKIT
+                    required: false
+              Element:
+                type: string
+                example: >-
+                  exp-portalweb-dev-main/processors/1 @
+                  exp-portalweb-dev-07-28-2023-brunolim:exp-portalweb-dev.xml:31
+                required: false
+              Element DSL:
+                type: string
+                example: >-
+                  <apikit:router
+                  config-ref="exp-portalweb-dev-config"></apikit:router>
+                required: false
+              FlowStack:
+                type: object
+                properties:
+                  elements:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        creationTime:
+                          type: integer
+                          example: 1690863375041
+                          required: false
+                        flowName:
+                          type: string
+                          example: exp-portalweb-dev-main
+                          required: false
+                        elapsedTimeLong:
+                          type: integer
+                          example: 26230
+                          required: false
+                        creationTimeLong:
+                          type: integer
+                          example: 1690863375041
+                          required: false
+                        processorPath:
+                          type: string
+                          example: >-
+                            exp-portalweb-dev-main/processors/1 @
+                            exp-portalweb-dev-07-28-2023-brunolim:exp-portalweb-dev.xml:31
+                          required: false
+                        chainIdentifier:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                              example: flow
+                              required: false
+                            namespace:
+                              type: string
+                              example: mule
+                              required: false
+                            namespaceUri:
+                              type: string
+                              example: http://www.mulesoft.org/schema/mule/core
+                              required: false
+                        elapsedTime:
+                          type: integer
+                          example: 26230
+                          required: false
+      description:
+        type: string
+        example: /validaleituraf
+        required: false
+      detailedDescription:
+        type: string
+        example: /validaleituraf
+        required: false
+      failingComponent:
+        type: string
+        example: >-
+          exp-portalweb-dev-main/processors/1 @
+          exp-portalweb-dev-07-28-2023-brunolim:exp-portalweb-dev.xml:31
+        required: false

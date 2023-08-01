@@ -1,0 +1,30 @@
+#%RAML 1.0 Library
+usage: This library provides some common response message structures for APIs
+types:
+  ErrorResponse:
+    description: Represents a standard message body to be returned with error responses
+    properties:
+      code:
+        type: integer
+        example: 400
+        required: false
+      reason:
+        type: string
+        example: Bad Request
+        required: false
+      timeStamp:
+        type: datetime
+        example: '2023-08-01T09:00:27.4969626-03:00'
+        required: false
+      message:
+        type: string
+        example: Invalid request message.
+        required: false
+      errorDescription:
+        type: string
+        example: Error description Mulesoft.
+        required: false
+      correlationId:
+        type: string
+        example: fe74a690-3062-11ee-ad3f-00d76d3bb9e8
+        required: false

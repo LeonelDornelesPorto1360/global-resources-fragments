@@ -1,0 +1,77 @@
+#%RAML 1.0 Trait
+
+uses:
+  PostErrorHandler: ../libraries/PostErrorHandler.raml
+
+headers:
+  400:
+    description: Customize the response message
+    type: string
+    example: Invalid request message
+    required: false
+  401:
+    description: Customize the response message
+    type: string
+    example: Required credentials are missing or invalid
+    required: false
+  403:
+    description: Customize the response message
+    type: string
+    example: Access to the requested resource was denied
+    required: false
+  404:
+    description: Customize the response message
+    type: string
+    example: Requested resource was not found
+    required: false
+  405:
+    description: Customize the response message
+    type: string
+    example: The target resource does not support the requested method
+    required: false
+  406:
+    description: Customize the response message
+    type: string
+    example: The requested resource cannot generate acceptable content according to the Accept headers sent in the request.
+    required: false
+  408:
+    description: Customize the response message
+    type: string
+    example: The requested resource status code indicates that the server did not receive a complete request message within the time that it was prepared to wait.
+    required: false
+  415:
+    description: Customize the response message
+    type: string
+    example: The server is refusing to the request because it is not in a format supported by the target resource.
+    required: false
+  429:
+    description: Customize the response message
+    type: string
+    example: The server is refusing to handle the request because a rate limit has been exceeded.
+    required: false
+  500:
+    description: Customize the response message
+    type: string
+    example: The server was unable to process the request due to an internal error.
+    required: false
+  501:
+    description: Customize the response message
+    type: string
+    example: The 501 (Not Implemented) status code indicates that the server does not support the functionality required to fulfill the request. This is the appropriate response when the server does not recognize the request method and is not capable of supporting it for any resource.
+    required: false
+  502:
+    description: Customize the response message
+    type: string
+    example: The 502 (Bad Gateway) status code indicates that the server, while acting as a gateway or proxy, received an invalid response from an inbound server it accessed while attempting to fulfill the request.
+    required: false
+  503:
+    description: Customize the response message
+    type: string
+    example: The 503 (Service Unavailable) status code indicates that the server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.
+    required: false
+body:
+  application/json:
+    type: PostErrorHandler.PostErrorHandler
+    example: !include ../examples/PostErrorHandler.raml
+
+    

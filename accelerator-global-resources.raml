@@ -1,0 +1,17 @@
+#%RAML 1.0 Library
+usage: Provides a collection of common resources, traits and types for use in API Specifications
+
+uses:
+  ResponseTypes: libraries/ResponseTypeLibrary.raml
+
+traits:
+  ErrorResponses: !include traits/ErrorResponsesTrait.raml
+  PostErrorHandler: !include traits/PostErrorHandler.raml
+
+types:
+  ErrorResponse: ResponseTypes.ErrorResponse
+
+securitySchemes:
+  client-enforcement: !include security-schemes/client-enforcement.raml
+  basic-authentication: !include security-schemes/basic-authentication.raml
+  oauth_2_0: !include security-schemes/oauth.raml
