@@ -4,6 +4,11 @@ uses:
   PostErrorHandler: ../libraries/PostErrorHandler.raml
 
 headers:
+  X-Correlation-Id:
+    description: Customize correlationId in flow
+    type: string
+    example: Invalid request message
+    required: true
   400:
     description: Customize the response message
     type: string
