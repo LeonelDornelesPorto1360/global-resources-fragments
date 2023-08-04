@@ -28,3 +28,19 @@ types:
         type: string
         example: fe74a690-3062-11ee-ad3f-00d76d3bb9e8
         required: false
+      flowName:
+        type: string
+        example: exp-portalweb-dev-main
+        required: false
+      routerApkit:
+        type: string
+        example: <apikit:router config-ref=\"exp-portalweb-dev-config\"></apikit:router>
+        required: false
+      failingComponent:
+        type: string
+        example: exp-portalweb-dev-main/processors/1 @ exp-portalweb-dev-07-28-2023-brunolim:exp-portalweb-dev.xml:31
+        required: false
+      detailedMessage:
+        type: string
+        example: "\r\n********************************************************************************\r\nMessage               : /validaleituraf\r\nElement               : exp-portalweb-dev-main/processors/1 @ exp-portalweb-dev-07-28-2023-brunolim:exp-portalweb-dev.xml:31\r\nElement DSL           : <apikit:router config-ref=\"exp-portalweb-dev-config\"></apikit:router>\r\nError type            : APIKIT:NOT_FOUND\r\nFlowStack             : at exp-portalweb-dev-main(exp-portalweb-dev-main/processors/1 @ exp-portalweb-dev-07-28-2023-brunolim:exp-portalweb-dev.xml:31)\r\n\r\n  (set debug level logging or '-Dmule.verbose.exceptions=true' for everything)\r\n********************************************************************************\r\n"
+        required: false
