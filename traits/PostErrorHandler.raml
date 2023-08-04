@@ -1,13 +1,20 @@
 #%RAML 1.0 Trait
 
-uses:
-  PostErrorHandler: ../libraries/PostErrorHandler.raml
-
 headers:
+  custom-errors-dwl:
+    description: Customize erros with file dwl.
+    type: string
+    example: file-custom-erros.dwl
+    required: false
+  X-Correlation-Id-Message-Customize:
+    description: Customize correlationId in flow
+    type: string
+    example: The X-Correlation-Id attribute cannot be empty.
+    required: false
   X-Correlation-Id:
     description: Customize correlationId in flow
     type: string
-    example: Invalid request message
+    example: fe74a690-3062-11ee-ad3f-00d76d3bb9e8
     required: true
   400:
     description: Customize the response message
@@ -76,7 +83,6 @@ headers:
     required: false
 body:
   application/json:
-    type: PostErrorHandler.PostErrorHandler
     example: !include ../examples/PostErrorHandler.raml
 
     
